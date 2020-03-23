@@ -1,0 +1,86 @@
+<!DOCTYPE>
+<html>
+	<head>
+        <title>Ethan's_Web_Comment</title>
+		<style type = "text/css">
+		.container
+		{
+			background-color:#32363E;
+			position: static;
+			// position: absolute;
+			// top: 0px;
+			width: 100%;
+		}
+		.body{
+			background-color: #6C8FB7;
+		
+		
+		}
+		.main{
+				background-color: white;
+				text-align: center;
+				padding: 20px 20px;
+				border-radius: 35px;
+				margin-bottom: 100px;
+				margin-left: 10px;
+				width: 10%;
+				height:40px;
+				text-decoration: none;
+				transition: 0.5s;
+				font-size:30px;
+			}
+		.content{
+				position: relative;
+				top: -30px;
+				left: 160px;
+				background-color: transparent;
+				border-bottom: 5px solid white;
+				
+				margin-top: 10px;
+				margin-bottom: 30px;
+				
+				color: white;
+				text-align: center;
+				padding: 20px 20px;
+				border-radius: 35px;
+				border: 5px solid white;
+				width: 1000px;
+				height:50px;
+				text-decoration: none;
+				transition: 0.5s;
+				
+		}
+		.main:hover
+		{
+			background-color: #FF5733;
+			width: 11%;
+			height:35px;
+		}
+		.h3{
+			
+		}	
+		
+		</style>
+	</head>
+	<body style="margin: 0">
+	
+		<div class = 'container'>
+		</br>
+		</br>
+			{% for message in messages %}
+				<div class = 'main'>
+					{{message.nickname}}
+					<div class = 'content'>{{ message.text}}</div>
+					</br>
+				</div>
+			{% endfor %}
+		
+		
+			<form method = "post" class = "">
+			{% csrf_token %}
+				<input type ="text" name = "nickname" required placeholder = "nickname">
+				<input type ="text" name = "text" required placeholder = "comment">
+				<input type ="submit" name = "" value = "submit">
+			</form>
+		</div>
+	</body>

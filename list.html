@@ -1,0 +1,59 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<META CHARSET = "UTF-8">
+		<title> LIST </title>
+		<style type = "text/css">
+			body{
+				background: #094058;
+			}
+			.main{
+				background-color:#094058;
+				text-align: center;
+				padding: 20px 20px;
+				border: solid;
+				border-width:10px;
+				border-color: white;
+				border-radius: 20px;
+				margin: 50px;
+				width: 200px;
+				height: 200px;
+				transform: rotate(-10deg) skewX(0deg) translate(20px,-15px);
+				box-shadow: -50px 50px 50px rgba(0, 0, 0, 0.6);
+				transition: 0.5s;
+			}
+			.main a{
+				line-height:200px;
+				color: #eabe34;
+				text-decoration: none;
+				font-size: 30px;
+				transition: 0.5s;
+			}
+			.main:hover{
+				background-color:#117BAC;
+				text-align: center;
+				padding: 20px 20px;
+				border: solid;
+				border-width:10px;
+				border-color: #3C494F;
+				border-radius: 20px;
+				margin: 50px;
+				width: 200px;
+				height: 200px;
+				transform: rotate(-10deg) skewX(0deg) translate(20px,-15px);
+				box-shadow: -50px 50px 50px rgba(0, 0, 0, 0.6);
+			}
+			.main:hover a{
+				color: #FFB11B;
+				font-size: 40px;
+			}
+		</style>
+	</head>
+	<body>
+	{% for leaf in TREE %}
+		<div class = 'main' >
+			<a href = '{{leaf}}' target = '_self'>{{leaf}}</a>
+		</div>
+	{% endfor %}
+	</body>
+<html>
